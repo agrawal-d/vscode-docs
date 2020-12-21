@@ -840,8 +840,6 @@ If your webview allows loading external resources, it is strongly recommended th
 
 ### Sanitize all user input
 
-Just as you would for a normal webpage, when constructing the HTML for a webview, you must sanitize all user input. Failing to properly sanitize input can allow content injections, which may open your users up to a security risk.
-
 Example values that must be sanitized:
 
 - File contents.
@@ -860,7 +858,7 @@ The best way to solve this is to make your webview stateless. Use [message passi
 
 ### getState and setState
 
-Scripts running inside a webview can use the `getState` and `setState` methods to save off and restore a JSON serializable state object. This state is persisted even the webview content itself is destroyed when a webview panel becomes hidden. The state is destroyed when the webview panel is destroyed.
+Scripts running inside a webview can use the `getState` and `setState` methods to save off and restore a JSON serializable state object. This state is persisted even after the webview content itself is destroyed when a webview panel becomes hidden. The state is destroyed when the webview panel is destroyed.
 
 ```js
 // Inside a webview script
